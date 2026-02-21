@@ -24,8 +24,8 @@ GG.scene().backgroundColor(@(0.1, 0.1, 0.15));
 // Window Setup
 //----------------------------------------------------------------------------
 
-// GWindow.sizeLimits(1920, 1080, 0, 0, @(16, 9));
-// GWindow.center();
+GWindow.sizeLimits(1920, 1080, 0, 0, @(16, 9));
+GWindow.center();
 GWindow.title("Date the Dobots");
 
 //----------------------------------------------------------------------------
@@ -35,12 +35,12 @@ GWindow.title("Date the Dobots");
 Game game;
 spork ~ game.run();
 
-// fun void resizeListener() {
-//     while (true) {
-//         GWindow.resizeEvent() => now;
-//         GWindow.sizeLimits(0, 0, 0, 0, @(16, 9));
-//     }
-// } spork ~ resizeListener();
+fun void resizeListener() {
+    while (true) {
+        GWindow.resizeEvent() => now;
+        GWindow.sizeLimits(0, 0, 0, 0, @(16, 9));
+    }
+} spork ~ resizeListener();
 
 //----------------------------------------------------------------------------
 // Keep the main thread alive
